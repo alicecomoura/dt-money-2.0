@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Venda",
+      "price": 1500,
+      "createdAt": "2022-08-30T16:38:34.716Z"
+    },
+    {
+      "id": 2,
+      "description": "Aluguel",
+      "type": "outcome",
+      "category": "Casa",
+      "price": 1000,
+      "createdAt": "2022-08-30T16:36:34.716Z"
+    },
+    {
+      "id": 3,
+      "description": "Jantar",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 100,
+      "createdAt": "2022-08-30T16:36:34.716Z"
+    }
+  ]
+}
