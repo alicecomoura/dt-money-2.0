@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { TransactionsContext } from "../contexts/transactionsContext";
+import { useContext } from 'react'
+import { TransactionsContext } from '../contexts/transactionsContext'
 
 export function useSummary() {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext)
 
   // o reduce neste caso transaforma o array de transactions em um objeto
   // com os os totais => { income: 0, outcome: 0: total: 0 }
@@ -10,22 +10,22 @@ export function useSummary() {
 
   const summary = transactions.reduce(
     (acc, transaction) => {
-      if (transaction.type === "income") {
-        acc.income += transaction.price;
-        acc.total += transaction.price;
+      if (transaction.type === 'income') {
+        acc.income += transaction.price
+        acc.total += transaction.price
       } else {
-        acc.outcome += transaction.price;
-        acc.total -= transaction.price;
+        acc.outcome += transaction.price
+        acc.total -= transaction.price
       }
 
-      return acc;
+      return acc
     },
     {
       income: 0,
       outcome: 0,
       total: 0,
-    }
-  );
+    },
+  )
 
-  return summary;
+  return summary
 }
