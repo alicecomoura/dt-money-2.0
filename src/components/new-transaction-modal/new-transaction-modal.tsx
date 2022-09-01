@@ -32,6 +32,8 @@ export function NewTransactionModal() {
     resolver: zodResolver(newTransactionFormSchema),
   });
 
+  // simular uma requisição demorada
+  // cria uma nova Promessa e resolve ela após 2s
   async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
