@@ -24,7 +24,7 @@ export function SearchForm() {
   // simular uma requisição demorada
   // cria uma nova Promessa e resolve ela após 2s
   async function handleSearchTransactions(data: SearchFormInputs) {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log(data);
   }
