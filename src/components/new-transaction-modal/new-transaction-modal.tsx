@@ -1,3 +1,6 @@
+import { TransactionsContext } from '../../contexts/transactionsContext'
+import { useContextSelector } from 'use-context-selector'
+
 import { Controller, useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -12,8 +15,6 @@ import {
   TransactionType,
   TransactionTypeButton,
 } from './styles'
-import { useContext } from 'react'
-import { TransactionsContext } from '../../contexts/transactionsContext'
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -25,7 +26,12 @@ const newTransactionFormSchema = z.object({
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>
 
 export function NewTransactionModal() {
-  const { createTransaction } = useContext(TransactionsContext)
+  const createTransaction = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return context.createTransaction
+    },
+  )
 
   const {
     control,
